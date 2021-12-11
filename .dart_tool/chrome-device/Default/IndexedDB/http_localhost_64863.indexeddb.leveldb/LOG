@@ -1,0 +1,31 @@
+2021/06/05-09:18:26.314 4e8 Creating DB C:\Users\agidu\AppData\Local\Temp\flutter_tools.dd52bedb\flutter_tools_chrome_device.ebb0f30f\Default\IndexedDB\http_localhost_64863.indexeddb.leveldb since it was missing.
+2021/06/05-09:18:26.320 4e8 Reusing MANIFEST C:\Users\agidu\AppData\Local\Temp\flutter_tools.dd52bedb\flutter_tools_chrome_device.ebb0f30f\Default\IndexedDB\http_localhost_64863.indexeddb.leveldb/MANIFEST-000001
+2021/06/05-09:18:26.327 3cc4 Level-0 table #5: started
+2021/06/05-09:18:26.329 3cc4 Level-0 table #5: 606 bytes OK
+2021/06/05-09:18:26.330 3cc4 Delete type=0 #3
+2021/06/05-09:18:26.331 3cc4 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2021/06/05-09:30:25.403 9e8 Level-0 table #7: started
+2021/06/05-09:30:25.405 9e8 Level-0 table #7: 8522 bytes OK
+2021/06/05-09:30:25.406 9e8 Delete type=0 #4
+2021/06/05-09:30:25.406 9e8 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)
+2021/06/05-10:25:23.607 ac Level-0 table #9: started
+2021/06/05-10:25:23.609 ac Level-0 table #9: 17965 bytes OK
+2021/06/05-10:25:23.609 ac Delete type=0 #6
+2021/06/05-10:25:23.610 ac Manual compaction at level-0 from '\x00\x05\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at '\x00\x05\x00\x00\x05' @ 285 : 1
+2021/06/05-10:25:23.610 ac Compacting 1@0 + 1@1 files
+2021/06/05-10:25:23.612 ac Generated table #10@0: 119 keys, 4434 bytes
+2021/06/05-10:25:23.612 ac Compacted 1@0 + 1@1 files => 4434 bytes
+2021/06/05-10:25:23.613 ac compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/06/05-10:25:23.613 ac Delete type=2 #9
+2021/06/05-10:25:23.614 ac Manual compaction at level-0 from '\x00\x05\x00\x00\x05' @ 285 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at (end)
+2021/06/05-11:12:24.278 4fb8 Level-0 table #12: started
+2021/06/05-11:12:24.279 4fb8 Level-0 table #12: 14613 bytes OK
+2021/06/05-11:12:24.280 4fb8 Delete type=2 #7
+2021/06/05-11:12:24.280 4fb8 Delete type=0 #8
+2021/06/05-11:12:24.281 4fb8 Manual compaction at level-0 from '\x00\x06\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at '\x00\x06\x00\x00\x05' @ 390 : 1
+2021/06/05-11:12:24.281 4fb8 Compacting 1@0 + 1@1 files
+2021/06/05-11:12:24.282 4fb8 Generated table #13@0: 151 keys, 4791 bytes
+2021/06/05-11:12:24.282 4fb8 Compacted 1@0 + 1@1 files => 4791 bytes
+2021/06/05-11:12:24.283 4fb8 compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/06/05-11:12:24.283 4fb8 Delete type=2 #12
+2021/06/05-11:12:24.284 4fb8 Manual compaction at level-0 from '\x00\x06\x00\x00\x05' @ 390 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at (end)

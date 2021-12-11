@@ -1,0 +1,835 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/single_child_scroll_view.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter_svg/svg.dart', 'packages/projeto_reg_snake/view/screens/sobre_page.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/projeto_reg_snake/view/screens/widgets/w_botao.dart', 'packages/projeto_reg_snake/view/screens/cadastro_usuario.dart', 'packages/projeto_reg_snake/view/screens/cadastro_serpente.dart', 'packages/projeto_reg_snake/view/screens/consulta_serpente.dart', 'packages/projeto_reg_snake/view/screens/alimenta_serpente.dart', 'packages/projeto_reg_snake/view/screens/vermifugacao_serpente.dart', 'packages/projeto_reg_snake/view/screens/obito_serpente.dart'], (function load__packages__projeto_reg_snake__view__screens__menu_page_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__single_child_scroll_view$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter_svg__svg$46dart, packages__projeto_reg_snake__view__screens__sobre_page$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__projeto_reg_snake__view__screens__widgets__w_botao$46dart, packages__projeto_reg_snake__view__screens__cadastro_usuario$46dart, packages__projeto_reg_snake__view__screens__cadastro_serpente$46dart, packages__projeto_reg_snake__view__screens__consulta_serpente$46dart, packages__projeto_reg_snake__view__screens__alimenta_serpente$46dart, packages__projeto_reg_snake__view__screens__vermifugacao_serpente$46dart, packages__projeto_reg_snake__view__screens__obito_serpente$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const gesture_detector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__gesture_detector;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const pages = packages__flutter__src__widgets__widget_span$46dart.src__widgets__pages;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const theme = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const single_child_scroll_view = packages__flutter__src__widgets__single_child_scroll_view$46dart.src__widgets__single_child_scroll_view;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const svg = packages__flutter_svg__svg$46dart.svg;
+  const sobre_page = packages__projeto_reg_snake__view__screens__sobre_page$46dart.view__screens__sobre_page;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const w_botao = packages__projeto_reg_snake__view__screens__widgets__w_botao$46dart.view__screens__widgets__w_botao;
+  const cadastro_usuario = packages__projeto_reg_snake__view__screens__cadastro_usuario$46dart.view__screens__cadastro_usuario;
+  const cadastro_serpente = packages__projeto_reg_snake__view__screens__cadastro_serpente$46dart.view__screens__cadastro_serpente;
+  const consulta_serpente = packages__projeto_reg_snake__view__screens__consulta_serpente$46dart.view__screens__consulta_serpente;
+  const alimenta_serpente = packages__projeto_reg_snake__view__screens__alimenta_serpente$46dart.view__screens__alimenta_serpente;
+  const vermifugacao_serpente = packages__projeto_reg_snake__view__screens__vermifugacao_serpente$46dart.view__screens__vermifugacao_serpente;
+  const obito_serpente = packages__projeto_reg_snake__view__screens__obito_serpente$46dart.view__screens__obito_serpente;
+  var menu_page = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    SobrePageL: () => (T.SobrePageL = dart.constFn(dart.legacy(sobre_page.SobrePage)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    doubleL: () => (T.doubleL = dart.constFn(dart.legacy(core.double)))(),
+    AnimationOfdoubleL: () => (T.AnimationOfdoubleL = dart.constFn(animation.Animation$(T.doubleL())))(),
+    AnimationLOfdoubleL: () => (T.AnimationLOfdoubleL = dart.constFn(dart.legacy(T.AnimationOfdoubleL())))(),
+    BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToSobrePageL: () => (T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToSobrePageL = dart.constFn(dart.fnType(T.SobrePageL(), [T.BuildContextL(), T.AnimationLOfdoubleL(), T.AnimationLOfdoubleL()])))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    CadastroUsuarioL: () => (T.CadastroUsuarioL = dart.constFn(dart.legacy(cadastro_usuario.CadastroUsuario)))(),
+    BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToCadastroUsuarioL: () => (T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToCadastroUsuarioL = dart.constFn(dart.fnType(T.CadastroUsuarioL(), [T.BuildContextL(), T.AnimationLOfdoubleL(), T.AnimationLOfdoubleL()])))(),
+    CadastroSerpenteL: () => (T.CadastroSerpenteL = dart.constFn(dart.legacy(cadastro_serpente.CadastroSerpente)))(),
+    BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToCadastroSerpenteL: () => (T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToCadastroSerpenteL = dart.constFn(dart.fnType(T.CadastroSerpenteL(), [T.BuildContextL(), T.AnimationLOfdoubleL(), T.AnimationLOfdoubleL()])))(),
+    ConsultaSerpenteL: () => (T.ConsultaSerpenteL = dart.constFn(dart.legacy(consulta_serpente.ConsultaSerpente)))(),
+    BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToConsultaSerpenteL: () => (T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToConsultaSerpenteL = dart.constFn(dart.fnType(T.ConsultaSerpenteL(), [T.BuildContextL(), T.AnimationLOfdoubleL(), T.AnimationLOfdoubleL()])))(),
+    AlimentaSerpenteL: () => (T.AlimentaSerpenteL = dart.constFn(dart.legacy(alimenta_serpente.AlimentaSerpente)))(),
+    BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToAlimentaSerpenteL: () => (T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToAlimentaSerpenteL = dart.constFn(dart.fnType(T.AlimentaSerpenteL(), [T.BuildContextL(), T.AnimationLOfdoubleL(), T.AnimationLOfdoubleL()])))(),
+    VermifugacaoSerpenteL: () => (T.VermifugacaoSerpenteL = dart.constFn(dart.legacy(vermifugacao_serpente.VermifugacaoSerpente)))(),
+    BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToVermifugacaoSerpenteL: () => (T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToVermifugacaoSerpenteL = dart.constFn(dart.fnType(T.VermifugacaoSerpenteL(), [T.BuildContextL(), T.AnimationLOfdoubleL(), T.AnimationLOfdoubleL()])))(),
+    ObitoSerpenteL: () => (T.ObitoSerpenteL = dart.constFn(dart.legacy(obito_serpente.ObitoSerpente)))(),
+    BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToObitoSerpenteL: () => (T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToObitoSerpenteL = dart.constFn(dart.fnType(T.ObitoSerpenteL(), [T.BuildContextL(), T.AnimationLOfdoubleL(), T.AnimationLOfdoubleL()])))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 23,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 35,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 28,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 11,
+        [_Location_line]: 28,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 11,
+        [_Location_line]: 29,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "centerTitle",
+        [_Location_column]: 11,
+        [_Location_line]: 30,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8], T._LocationL());
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 27,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "assetName",
+        [_Location_column]: 30,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "semanticsLabel",
+        [_Location_column]: 52,
+        [_Location_line]: 37,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11, C[12] || CT.C12], T._LocationL());
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 37,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.constList([], T._LocationL());
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 52,
+        [_Location_line]: 44,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "rotulo",
+        [_Location_column]: 30,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.constList([C[17] || CT.C17], T._LocationL());
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[16] || CT.C16,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 47,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 17,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21], T._LocationL());
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 52,
+        [_Location_line]: 55,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "rotulo",
+        [_Location_column]: 30,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.constList([C[25] || CT.C25], T._LocationL());
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[24] || CT.C24,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 58,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 17,
+        [_Location_line]: 51,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.constList([C[28] || CT.C28, C[29] || CT.C29], T._LocationL());
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[27] || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 50,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 52,
+        [_Location_line]: 66,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "rotulo",
+        [_Location_column]: 30,
+        [_Location_line]: 69,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33], T._LocationL());
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 69,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 17,
+        [_Location_line]: 62,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 69,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36, C[37] || CT.C37], T._LocationL());
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 61,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 52,
+        [_Location_line]: 77,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "rotulo",
+        [_Location_column]: 32,
+        [_Location_line]: 79,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.constList([C[41] || CT.C41], T._LocationL());
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[40] || CT.C40,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 79,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 17,
+        [_Location_line]: 73,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 79,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.constList([C[44] || CT.C44, C[45] || CT.C45], T._LocationL());
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[43] || CT.C43,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 72,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 52,
+        [_Location_line]: 86,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "rotulo",
+        [_Location_column]: 30,
+        [_Location_line]: 89,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.constList([C[49] || CT.C49], T._LocationL());
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[48] || CT.C48,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 89,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 17,
+        [_Location_line]: 82,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 89,
+        [_Location_file]: null
+      });
+    },
+    get C51() {
+      return C[51] = dart.constList([C[52] || CT.C52, C[53] || CT.C53], T._LocationL());
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[51] || CT.C51,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 81,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 52,
+        [_Location_line]: 97,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "rotulo",
+        [_Location_column]: 30,
+        [_Location_line]: 100,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.constList([C[57] || CT.C57], T._LocationL());
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[56] || CT.C56,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 100,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 17,
+        [_Location_line]: 93,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 100,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.constList([C[60] || CT.C60, C[61] || CT.C61], T._LocationL());
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[59] || CT.C59,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 92,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 52,
+        [_Location_line]: 108,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "rotulo",
+        [_Location_column]: 32,
+        [_Location_line]: 110,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.constList([C[65] || CT.C65], T._LocationL());
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[64] || CT.C64,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 110,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 17,
+        [_Location_line]: 104,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 110,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.constList([C[68] || CT.C68, C[69] || CT.C69], T._LocationL());
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[67] || CT.C67,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 103,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 25,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.constList([C[72] || CT.C72], T._LocationL());
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[71] || CT.C71,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 36,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 11,
+        [_Location_line]: 35,
+        [_Location_file]: null
+      });
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 36,
+        [_Location_file]: null
+      });
+    },
+    get C74() {
+      return C[74] = dart.constList([C[75] || CT.C75, C[76] || CT.C76], T._LocationL());
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[74] || CT.C74,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 34,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C78() {
+      return C[78] = dart.constList([C[79] || CT.C79], T._LocationL());
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[78] || CT.C78,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 33,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 9,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 9,
+        [_Location_line]: 32,
+        [_Location_file]: null
+      });
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 9,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C81() {
+      return C[81] = dart.constList([C[82] || CT.C82, C[83] || CT.C83, C[84] || CT.C84], T._LocationL());
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[81] || CT.C81,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 26,
+        [_Location_file]: "file:///C:/Users/agidu/OneDrive/Documentos/ADS4/ProgDispMoveis/ProjetoDisciplina/projeto_reg_snake/lib/view/screens/menu_page.dart"
+      });
+    }
+  }, false);
+  var C = Array(85).fill(void 0);
+  var I = ["package:projeto_reg_snake/view/screens/menu_page.dart"];
+  var title$ = dart.privateName(menu_page, "MenuPage.title");
+  menu_page.MenuPage = class MenuPage extends framework.StatefulWidget {
+    get title() {
+      return this[title$];
+    }
+    set title(value) {
+      super.title = value;
+    }
+    createState() {
+      return new menu_page._MenuPageState.new();
+    }
+  };
+  (menu_page.MenuPage.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[title$] = title;
+    menu_page.MenuPage.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = menu_page.MenuPage.prototype;
+  dart.addTypeTests(menu_page.MenuPage);
+  dart.addTypeCaches(menu_page.MenuPage);
+  dart.setMethodSignature(menu_page.MenuPage, () => ({
+    __proto__: dart.getMethods(menu_page.MenuPage.__proto__),
+    createState: dart.fnType(dart.legacy(menu_page._MenuPageState), [])
+  }));
+  dart.setLibraryUri(menu_page.MenuPage, I[0]);
+  dart.setFieldSignature(menu_page.MenuPage, () => ({
+    __proto__: dart.getFields(menu_page.MenuPage.__proto__),
+    title: dart.finalFieldType(dart.legacy(core.String))
+  }));
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  menu_page._MenuPageState = class _MenuPageState extends framework.State$(dart.legacy(menu_page.MenuPage)) {
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("RegSnake", {style: theme.Theme.of(context).textTheme.headline1, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), backgroundColor: theme.Theme.of(context).primaryColor, centerTitle: true, $creationLocationd_0dea112b090073317d4: C[4] || CT.C4}), backgroundColor: theme.Theme.of(context).backgroundColor, body: new single_child_scroll_view.SingleChildScrollView.new({child: new container.Container.new({padding: new edge_insets.EdgeInsets.all(40.0), child: new basic.Column.new({children: T.JSArrayOfWidgetL().of([new svg.SvgPicture.asset("imagens/scared.svg", {semanticsLabel: "scared", $creationLocationd_0dea112b090073317d4: C[9] || CT.C9}), new gesture_detector.GestureDetector.new({onTap: dart.fn(() => {
+                    navigator.Navigator.push(dart.dynamic, context, new pages.PageRouteBuilder.new({transitionDuration: new core.Duration.new({milliseconds: 100}), pageBuilder: dart.fn((_, __, ___) => new sobre_page.SobrePage.new({$creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToSobrePageL())}));
+                  }, T.VoidToNull()), child: new w_botao.WBotao.new({rotulo: "Sobre", $creationLocationd_0dea112b090073317d4: C[15] || CT.C15}), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18}), new gesture_detector.GestureDetector.new({onTap: dart.fn(() => {
+                    navigator.Navigator.push(dart.dynamic, context, new pages.PageRouteBuilder.new({transitionDuration: new core.Duration.new({milliseconds: 100}), pageBuilder: dart.fn((_, __, ___) => new cadastro_usuario.CadastroUsuario.new({$creationLocationd_0dea112b090073317d4: C[22] || CT.C22}), T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToCadastroUsuarioL())}));
+                  }, T.VoidToNull()), child: new w_botao.WBotao.new({rotulo: "Cadastro de usuário", $creationLocationd_0dea112b090073317d4: C[23] || CT.C23}), $creationLocationd_0dea112b090073317d4: C[26] || CT.C26}), new gesture_detector.GestureDetector.new({onTap: dart.fn(() => {
+                    navigator.Navigator.push(dart.dynamic, context, new pages.PageRouteBuilder.new({transitionDuration: new core.Duration.new({milliseconds: 100}), pageBuilder: dart.fn((_, __, ___) => new cadastro_serpente.CadastroSerpente.new({$creationLocationd_0dea112b090073317d4: C[30] || CT.C30}), T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToCadastroSerpenteL())}));
+                  }, T.VoidToNull()), child: new w_botao.WBotao.new({rotulo: "Registro de serpente", $creationLocationd_0dea112b090073317d4: C[31] || CT.C31}), $creationLocationd_0dea112b090073317d4: C[34] || CT.C34}), new gesture_detector.GestureDetector.new({onTap: dart.fn(() => {
+                    navigator.Navigator.push(dart.dynamic, context, new pages.PageRouteBuilder.new({transitionDuration: new core.Duration.new({milliseconds: 100}), pageBuilder: dart.fn((_, __, ___) => new consulta_serpente.ConsultaSerpente.new({$creationLocationd_0dea112b090073317d4: C[38] || CT.C38}), T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToConsultaSerpenteL())}));
+                  }, T.VoidToNull()), child: new w_botao.WBotao.new({rotulo: "Consulta", $creationLocationd_0dea112b090073317d4: C[39] || CT.C39}), $creationLocationd_0dea112b090073317d4: C[42] || CT.C42}), new gesture_detector.GestureDetector.new({onTap: dart.fn(() => {
+                    navigator.Navigator.push(dart.dynamic, context, new pages.PageRouteBuilder.new({transitionDuration: new core.Duration.new({milliseconds: 100}), pageBuilder: dart.fn((_, __, ___) => new alimenta_serpente.AlimentaSerpente.new({$creationLocationd_0dea112b090073317d4: C[46] || CT.C46}), T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToAlimentaSerpenteL())}));
+                  }, T.VoidToNull()), child: new w_botao.WBotao.new({rotulo: "Alimentação", $creationLocationd_0dea112b090073317d4: C[47] || CT.C47}), $creationLocationd_0dea112b090073317d4: C[50] || CT.C50}), new gesture_detector.GestureDetector.new({onTap: dart.fn(() => {
+                    navigator.Navigator.push(dart.dynamic, context, new pages.PageRouteBuilder.new({transitionDuration: new core.Duration.new({milliseconds: 100}), pageBuilder: dart.fn((_, __, ___) => new vermifugacao_serpente.VermifugacaoSerpente.new({$creationLocationd_0dea112b090073317d4: C[54] || CT.C54}), T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToVermifugacaoSerpenteL())}));
+                  }, T.VoidToNull()), child: new w_botao.WBotao.new({rotulo: "Vermifugação", $creationLocationd_0dea112b090073317d4: C[55] || CT.C55}), $creationLocationd_0dea112b090073317d4: C[58] || CT.C58}), new gesture_detector.GestureDetector.new({onTap: dart.fn(() => {
+                    navigator.Navigator.push(dart.dynamic, context, new pages.PageRouteBuilder.new({transitionDuration: new core.Duration.new({milliseconds: 100}), pageBuilder: dart.fn((_, __, ___) => new obito_serpente.ObitoSerpente.new({$creationLocationd_0dea112b090073317d4: C[62] || CT.C62}), T.BuildContextLAndAnimationLOfdoubleLAndAnimationLOfdoubleLToObitoSerpenteL())}));
+                  }, T.VoidToNull()), child: new w_botao.WBotao.new({rotulo: "Óbito", $creationLocationd_0dea112b090073317d4: C[63] || CT.C63}), $creationLocationd_0dea112b090073317d4: C[66] || CT.C66})]), $creationLocationd_0dea112b090073317d4: C[70] || CT.C70}), $creationLocationd_0dea112b090073317d4: C[73] || CT.C73}), $creationLocationd_0dea112b090073317d4: C[77] || CT.C77}), $creationLocationd_0dea112b090073317d4: C[80] || CT.C80});
+    }
+  };
+  (menu_page._MenuPageState.new = function() {
+    menu_page._MenuPageState.__proto__.new.call(this);
+    ;
+  }).prototype = menu_page._MenuPageState.prototype;
+  dart.addTypeTests(menu_page._MenuPageState);
+  dart.addTypeCaches(menu_page._MenuPageState);
+  dart.setMethodSignature(menu_page._MenuPageState, () => ({
+    __proto__: dart.getMethods(menu_page._MenuPageState.__proto__),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(menu_page._MenuPageState, I[0]);
+  dart.trackLibraries("packages/projeto_reg_snake/view/screens/menu_page.dart", {
+    "package:projeto_reg_snake/view/screens/menu_page.dart": menu_page
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["menu_page.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAgBe;;;;;;;AAGmB;IAAgB;;;QANlC;QAAU;;;AAAU,sDAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;UAWvB;AACxB,YAAO,oCACK,+BACC,kBAAK,oBAAyB,AAAY,AAAU,eAAnB,OAAO,iGACxB,AAAY,eAAT,OAAO,6BACpB,gFAEQ,AAAY,eAAT,OAAO,yBAC3B,+DACG,sCACa,+BAAI,cACjB,gCAAiB,yBACX,yBAAM,uCAAsC,mEAEtD,iDACU;AAKJ,oBAJS,uCACR,OAAO,EAAE,oDACa,qCAAuB,oBAC9B,SAAC,GAAG,IAAI,QAAQ;6CAG7B,gCAAc,+HAGtB,iDACS;AAKJ,oBAJS,uCACR,OAAO,EAAE,oDACa,qCAAuB,oBAC9B,SAAC,GAAG,IAAI,QAAQ;6CAG7B,gCAAc,6IAGxB,iDACW;AAKJ,oBAJS,uCACR,OAAO,EAAE,oDACa,qCAAuB,oBAC9B,SAAC,GAAG,IAAI,QAAQ;6CAG7B,gCAAc,8IAGxB,iDACW;AAKJ,oBAJS,uCACR,OAAO,EAAE,oDACa,qCAAuB,oBAC9B,SAAC,GAAG,IAAI,QAAQ;6CAE3B,gCAAc,kIAExB,iDACS;AAKJ,oBAJS,uCACR,OAAO,EAAE,oDACa,qCAAuB,oBAC9B,SAAC,GAAG,IAAI,QAAQ;6CAG7B,gCAAc,qIAGtB,iDACS;AAKJ,oBAJS,uCACR,OAAO,EAAE,oDACa,qCAAuB,oBAC9B,SAAC,GAAG,IAAI,QAAQ;6CAG7B,gCAAc,sIAGtB,iDACS;AAKJ,oBAJS,uCACR,OAAO,EAAE,oDACa,qCAAuB,oBAC9B,SAAC,GAAG,IAAI,QAAQ;6CAE3B,gCAAc;IAGpC;;;;;EACF","file":"../../../../../../../../../../../packages/projeto_reg_snake/view/screens/menu_page.dart.lib.js"}');
+  // Exports:
+  return {
+    view__screens__menu_page: menu_page
+  };
+}));
+
+//# sourceMappingURL=menu_page.dart.lib.js.map

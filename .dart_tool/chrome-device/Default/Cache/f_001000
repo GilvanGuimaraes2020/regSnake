@@ -1,0 +1,396 @@
+define(['dart_sdk', 'packages/flutter/src/services/text_editing.dart', 'packages/flutter/src/widgets/widget_span.dart'], (function load__packages__extended_masked_text__src__masked_text_controller_dart(dart_sdk, packages__flutter__src__services__text_editing$46dart, packages__flutter__src__widgets__widget_span$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _internal = dart_sdk._internal;
+  const _js_helper = dart_sdk._js_helper;
+  const math = dart_sdk.math;
+  const io = dart_sdk.io;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const text_editing = packages__flutter__src__services__text_editing$46dart.src__services__text_editing;
+  const editable_text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__editable_text;
+  var masked_text_controller = Object.create(dart.library);
+  var $_get = dartx._get;
+  var $containsKey = dartx.containsKey;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    CursorBehaviourL: () => (T.CursorBehaviourL = dart.constFn(dart.legacy(masked_text_controller.CursorBehaviour)))(),
+    StringAndStringTobool: () => (T.StringAndStringTobool = dart.constFn(dart.fnType(core.bool, [core.String, core.String])))(),
+    StringAndStringTovoid: () => (T.StringAndStringTovoid = dart.constFn(dart.fnType(dart.void, [core.String, core.String])))(),
+    IdentityMapOfString$RegExp: () => (T.IdentityMapOfString$RegExp = dart.constFn(_js_helper.IdentityMap$(core.String, core.RegExp)))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: masked_text_controller.CursorBehaviour.prototype,
+        [_name$]: "CursorBehaviour.unlocked",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: masked_text_controller.CursorBehaviour.prototype,
+        [_name$]: "CursorBehaviour.start",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: masked_text_controller.CursorBehaviour.prototype,
+        [_name$]: "CursorBehaviour.end",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2], T.CursorBehaviourL());
+    }
+  }, false);
+  var C = Array(4).fill(void 0);
+  var I = [
+    "file:///c:/flutter/SDK/.pub-cache/hosted/pub.dartlang.org/extended_masked_text-2.3.1/lib/src/masked_text_controller.dart",
+    "package:extended_masked_text/src/masked_text_controller.dart"
+  ];
+  var _name$ = dart.privateName(masked_text_controller, "_name");
+  masked_text_controller.CursorBehaviour = class CursorBehaviour extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (masked_text_controller.CursorBehaviour.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 10, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 10, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = masked_text_controller.CursorBehaviour.prototype;
+  dart.addTypeTests(masked_text_controller.CursorBehaviour);
+  dart.addTypeCaches(masked_text_controller.CursorBehaviour);
+  dart.setLibraryUri(masked_text_controller.CursorBehaviour, I[1]);
+  dart.setFieldSignature(masked_text_controller.CursorBehaviour, () => ({
+    __proto__: dart.getFields(masked_text_controller.CursorBehaviour.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(masked_text_controller.CursorBehaviour, ['toString']);
+  masked_text_controller.CursorBehaviour.unlocked = C[0] || CT.C0;
+  masked_text_controller.CursorBehaviour.start = C[1] || CT.C1;
+  masked_text_controller.CursorBehaviour.end = C[2] || CT.C2;
+  masked_text_controller.CursorBehaviour.values = C[3] || CT.C3;
+  var mask$ = dart.privateName(masked_text_controller, "MaskedTextController.mask");
+  var beforeChange$ = dart.privateName(masked_text_controller, "MaskedTextController.beforeChange");
+  var afterChange$ = dart.privateName(masked_text_controller, "MaskedTextController.afterChange");
+  var cursorBehavior$ = dart.privateName(masked_text_controller, "MaskedTextController.cursorBehavior");
+  var __MaskedTextController_translator = dart.privateName(masked_text_controller, "_#MaskedTextController#translator");
+  var __MaskedTextController_translator_isSet = dart.privateName(masked_text_controller, "_#MaskedTextController#translator#isSet");
+  var _lastUpdatedText = dart.privateName(masked_text_controller, "_lastUpdatedText");
+  var _lastCursor = dart.privateName(masked_text_controller, "_lastCursor");
+  var _cursorUpdatePending = dart.privateName(masked_text_controller, "_cursorUpdatePending");
+  var _cursorCalculatedPosition = dart.privateName(masked_text_controller, "_cursorCalculatedPosition");
+  var _previousMask = dart.privateName(masked_text_controller, "_previousMask");
+  var _lockProcess = dart.privateName(masked_text_controller, "_lockProcess");
+  var _listener = dart.privateName(masked_text_controller, "_listener");
+  var _moveCursor = dart.privateName(masked_text_controller, "_moveCursor");
+  var _applyMask = dart.privateName(masked_text_controller, "_applyMask");
+  var _calculateCursorPosition = dart.privateName(masked_text_controller, "_calculateCursorPosition");
+  var _removeMask = dart.privateName(masked_text_controller, "_removeMask");
+  masked_text_controller.MaskedTextController = class MaskedTextController extends editable_text.TextEditingController {
+    get mask() {
+      return this[mask$];
+    }
+    set mask(value) {
+      this[mask$] = value;
+    }
+    get beforeChange() {
+      return this[beforeChange$];
+    }
+    set beforeChange(value) {
+      this[beforeChange$] = value;
+    }
+    get afterChange() {
+      return this[afterChange$];
+    }
+    set afterChange(value) {
+      this[afterChange$] = value;
+    }
+    get cursorBehavior() {
+      return this[cursorBehavior$];
+    }
+    set cursorBehavior(value) {
+      this[cursorBehavior$] = value;
+    }
+    get translator() {
+      let t0;
+      return dart.test(this[__MaskedTextController_translator_isSet]) ? (t0 = this[__MaskedTextController_translator], t0) : dart.throw(new _internal.LateError.fieldNI("translator"));
+    }
+    set translator(t0) {
+      if (t0 == null) dart.nullFailed(I[0], 41, 28, "null");
+      this[__MaskedTextController_translator_isSet] = true;
+      this[__MaskedTextController_translator] = t0;
+    }
+    static getDefaultTranslator() {
+      return new (T.IdentityMapOfString$RegExp()).from(["A", core.RegExp.new("[A-Za-z]"), "0", core.RegExp.new("[0-9]"), "@", core.RegExp.new("[A-Za-z0-9]"), "*", core.RegExp.new(".*")]);
+    }
+    set text(newText) {
+      if (newText == null) dart.nullFailed(I[0], 87, 19, "newText");
+      if (super.text != newText) {
+        super.text = newText;
+      }
+    }
+    get text() {
+      return super.text;
+    }
+    [_listener]() {
+      if (!dart.test(this[_lockProcess])) {
+        try {
+          this[_lockProcess] = true;
+          if (this.text != this[_lastUpdatedText]) {
+            let previous = this[_lastUpdatedText];
+            if (dart.test(dart.nullCheck(this.beforeChange)(previous, this.text))) {
+              this.updateText(this.text);
+              dart.nullCheck(this.afterChange)(previous, this.text);
+            } else {
+              this.updateText(this[_lastUpdatedText]);
+            }
+          }
+          if (dart.test(this[_cursorUpdatePending]) && this.selection.baseOffset != this[_cursorCalculatedPosition]) {
+            this[_moveCursor](this[_cursorCalculatedPosition]);
+            this[_cursorUpdatePending] = false;
+          }
+          if (this.cursorBehavior != masked_text_controller.CursorBehaviour.unlocked) {
+            this.cursorBehavior == masked_text_controller.CursorBehaviour.start ? this[_moveCursor](0, true) : this[_moveCursor](this[_lastUpdatedText].length, true);
+          }
+          if (this[_lastCursor] != this.selection.baseOffset && dart.notNull(this.selection.baseOffset) > -1) {
+            this[_lastCursor] = this.selection.baseOffset;
+          }
+        } finally {
+          this[_lockProcess] = false;
+        }
+      }
+    }
+    updateMask(newMask, opts) {
+      if (newMask == null) dart.nullFailed(I[0], 142, 12, "newMask");
+      let shouldMoveCursorToEnd = opts && 'shouldMoveCursorToEnd' in opts ? opts.shouldMoveCursorToEnd : true;
+      if (shouldMoveCursorToEnd == null) dart.nullFailed(I[0], 143, 10, "shouldMoveCursorToEnd");
+      let shouldUpdateValue = opts && 'shouldUpdateValue' in opts ? opts.shouldUpdateValue : false;
+      if (shouldUpdateValue == null) dart.nullFailed(I[0], 144, 10, "shouldUpdateValue");
+      if (this.mask != newMask) {
+        this[_previousMask] = this.mask;
+        this.mask = newMask;
+        if (dart.test(shouldUpdateValue)) {
+          this.updateText(this.text);
+        }
+        if (dart.test(shouldMoveCursorToEnd)) {
+          this.moveCursorToEnd();
+        }
+      }
+    }
+    updateText(newText) {
+      let t1;
+      if (newText == null) dart.nullFailed(I[0], 161, 26, "newText");
+      let _oldMask = (t1 = this[_previousMask], t1 == null ? this.mask : t1);
+      let _mask = this.mask;
+      let oldText = this[_lastUpdatedText];
+      let previousCursor = this[_lastCursor];
+      this[_lastUpdatedText] = this[_applyMask](_mask, newText);
+      let newCursor = this[_calculateCursorPosition](previousCursor, _oldMask, _mask, oldText, this[_lastUpdatedText]);
+      this[_previousMask] = this.mask;
+      this.text = this[_lastUpdatedText];
+      this[_cursorUpdatePending] = true;
+      this[_cursorCalculatedPosition] = newCursor;
+      this[_moveCursor](this[_cursorCalculatedPosition]);
+    }
+    moveCursorToEnd() {
+      return this[_moveCursor](this[_lastUpdatedText].length, true);
+    }
+    get unmasked() {
+      return this[_removeMask](this.mask, this.text);
+    }
+    unmask(mask, text) {
+      if (mask == null) dart.nullFailed(I[0], 193, 24, "mask");
+      if (text == null) dart.nullFailed(I[0], 193, 37, "text");
+      return this[_removeMask](mask, text);
+    }
+    [_moveCursor](index, force = false) {
+      if (index == null) dart.nullFailed(I[0], 196, 24, "index");
+      if (force == null) dart.nullFailed(I[0], 196, 37, "force");
+      if (dart.test(force) || this.selection.baseOffset == this.selection.extentOffset) {
+        let value = math.min(core.int, math.max(core.int, index, 0), this.text.length);
+        this.selection = new text_editing.TextSelection.collapsed({offset: value});
+        this[_lastCursor] = value;
+      }
+    }
+    [_applyMask](mask, value) {
+      if (mask == null) dart.nullFailed(I[0], 206, 28, "mask");
+      if (value == null) dart.nullFailed(I[0], 206, 41, "value");
+      let result = new core.StringBuffer.new("");
+      let maskCharIndex = 0;
+      let valueCharIndex = 0;
+      while (maskCharIndex !== mask.length && valueCharIndex !== value.length) {
+        let maskChar = mask[$_get](maskCharIndex);
+        let valueChar = value[$_get](valueCharIndex);
+        if (maskChar === valueChar) {
+          result.write(maskChar);
+          valueCharIndex = valueCharIndex + 1;
+          maskCharIndex = maskCharIndex + 1;
+          continue;
+        }
+        if (dart.test(this.translator[$containsKey](maskChar))) {
+          if (dart.test(dart.nullCheck(this.translator[$_get](maskChar)).hasMatch(valueChar))) {
+            result.write(valueChar);
+            maskCharIndex = maskCharIndex + 1;
+          }
+          valueCharIndex = valueCharIndex + 1;
+          continue;
+        }
+        result.write(maskChar);
+        maskCharIndex = maskCharIndex + 1;
+      }
+      return result.toString();
+    }
+    [_removeMask](mask, value) {
+      if (mask == null) dart.nullFailed(I[0], 241, 29, "mask");
+      if (value == null) dart.nullFailed(I[0], 241, 42, "value");
+      let result = new core.StringBuffer.new("");
+      let charIndex = 0;
+      while (charIndex < mask.length && charIndex < value.length) {
+        let maskChar = mask[$_get](charIndex);
+        let valueChar = value[$_get](charIndex);
+        if (dart.test(this.translator[$containsKey](maskChar)) && dart.test(dart.nullCheck(this.translator[$_get](maskChar)).hasMatch(valueChar))) {
+          result.write(valueChar);
+        }
+        charIndex = charIndex + 1;
+      }
+      return result.toString();
+    }
+    [_calculateCursorPosition](oldCursor, oldMask, newMask, oldText, newText) {
+      if (oldCursor == null) dart.nullFailed(I[0], 263, 9, "oldCursor");
+      if (oldMask == null) dart.nullFailed(I[0], 264, 12, "oldMask");
+      if (newMask == null) dart.nullFailed(I[0], 265, 12, "newMask");
+      if (oldText == null) dart.nullFailed(I[0], 266, 12, "oldText");
+      if (newText == null) dart.nullFailed(I[0], 267, 12, "newText");
+      let oldUnmask = this[_removeMask](oldMask, oldText);
+      let newUnmask = this[_removeMask](newMask, newText);
+      let oldUnmaskCursor = oldCursor;
+      if (!true && dart.test(io.Platform.isIOS) && newUnmask.length === oldUnmask.length - 1) {
+        oldUnmaskCursor = dart.notNull(oldUnmaskCursor) + 1;
+      }
+      for (let k = 0; k < dart.notNull(oldCursor) && k < oldMask.length; k = k + 1) {
+        if (!dart.test(this.translator[$containsKey](oldMask[$_get](k)))) {
+          oldUnmaskCursor = dart.notNull(oldUnmaskCursor) - 1;
+        }
+      }
+      let unmaskNewChars = newUnmask.length - oldUnmask.length;
+      if (unmaskNewChars === 0 && oldMask == newMask && oldText != newText && oldText.length === newText.length && dart.notNull(oldCursor) < oldMask.length) {
+        unmaskNewChars = unmaskNewChars + 1;
+      }
+      let countDown = dart.notNull(oldUnmaskCursor) + unmaskNewChars;
+      let maskCount = 0;
+      for (let i = 0; i < newText.length && i < newMask.length && countDown > 0; i = i + 1) {
+        if (!dart.test(this.translator[$containsKey](newMask[$_get](i)))) {
+          maskCount = maskCount + 1;
+        } else {
+          countDown = countDown - 1;
+        }
+      }
+      return dart.notNull(oldUnmaskCursor) + maskCount + unmaskNewChars;
+    }
+  };
+  (masked_text_controller.MaskedTextController.new = function(opts) {
+    let t0;
+    let mask = opts && 'mask' in opts ? opts.mask : null;
+    if (mask == null) dart.nullFailed(I[0], 19, 19, "mask");
+    let beforeChange = opts && 'beforeChange' in opts ? opts.beforeChange : null;
+    let afterChange = opts && 'afterChange' in opts ? opts.afterChange : null;
+    let cursorBehavior = opts && 'cursorBehavior' in opts ? opts.cursorBehavior : C[0] || CT.C0;
+    if (cursorBehavior == null) dart.nullFailed(I[0], 22, 10, "cursorBehavior");
+    let text = opts && 'text' in opts ? opts.text : null;
+    let translator = opts && 'translator' in opts ? opts.translator : null;
+    this[__MaskedTextController_translator] = null;
+    this[__MaskedTextController_translator_isSet] = false;
+    this[_lastUpdatedText] = "";
+    this[_lastCursor] = 0;
+    this[_cursorUpdatePending] = false;
+    this[_cursorCalculatedPosition] = 0;
+    this[_previousMask] = null;
+    this[_lockProcess] = false;
+    this[mask$] = mask;
+    this[beforeChange$] = beforeChange;
+    this[afterChange$] = afterChange;
+    this[cursorBehavior$] = cursorBehavior;
+    masked_text_controller.MaskedTextController.__proto__.new.call(this, {text: text});
+    this.translator = (t0 = translator, t0 == null ? masked_text_controller.MaskedTextController.getDefaultTranslator() : t0);
+    this.beforeChange == null ? this.beforeChange = dart.fn((previous, next) => {
+      if (previous == null) dart.nullFailed(I[0], 29, 23, "previous");
+      if (next == null) dart.nullFailed(I[0], 29, 33, "next");
+      return true;
+    }, T.StringAndStringTobool()) : null;
+    this.afterChange == null ? this.afterChange = dart.fn((previous, next) => {
+      if (previous == null) dart.nullFailed(I[0], 30, 22, "previous");
+      if (next == null) dart.nullFailed(I[0], 30, 32, "next");
+    }, T.StringAndStringTovoid()) : null;
+    this.addListener(dart.bind(this, _listener));
+    this[_lastCursor] = this.text.length;
+    this.updateText(this.text);
+  }).prototype = masked_text_controller.MaskedTextController.prototype;
+  dart.addTypeTests(masked_text_controller.MaskedTextController);
+  dart.addTypeCaches(masked_text_controller.MaskedTextController);
+  dart.setMethodSignature(masked_text_controller.MaskedTextController, () => ({
+    __proto__: dart.getMethods(masked_text_controller.MaskedTextController.__proto__),
+    [_listener]: dart.fnType(dart.void, []),
+    updateMask: dart.fnType(dart.void, [core.String], {shouldMoveCursorToEnd: core.bool, shouldUpdateValue: core.bool}, {}),
+    updateText: dart.fnType(dart.void, [core.String]),
+    moveCursorToEnd: dart.fnType(dart.void, []),
+    unmask: dart.fnType(core.String, [core.String, core.String]),
+    [_moveCursor]: dart.fnType(dart.void, [core.int], [core.bool]),
+    [_applyMask]: dart.fnType(core.String, [core.String, core.String]),
+    [_removeMask]: dart.fnType(core.String, [core.String, core.String]),
+    [_calculateCursorPosition]: dart.fnType(core.int, [core.int, core.String, core.String, core.String, core.String])
+  }));
+  dart.setGetterSignature(masked_text_controller.MaskedTextController, () => ({
+    __proto__: dart.getGetters(masked_text_controller.MaskedTextController.__proto__),
+    translator: core.Map$(core.String, core.RegExp),
+    unmasked: core.String
+  }));
+  dart.setSetterSignature(masked_text_controller.MaskedTextController, () => ({
+    __proto__: dart.getSetters(masked_text_controller.MaskedTextController.__proto__),
+    translator: core.Map$(core.String, core.RegExp)
+  }));
+  dart.setLibraryUri(masked_text_controller.MaskedTextController, I[1]);
+  dart.setFieldSignature(masked_text_controller.MaskedTextController, () => ({
+    __proto__: dart.getFields(masked_text_controller.MaskedTextController.__proto__),
+    mask: dart.fieldType(core.String),
+    [__MaskedTextController_translator]: dart.fieldType(dart.nullable(core.Map$(core.String, core.RegExp))),
+    [__MaskedTextController_translator_isSet]: dart.fieldType(core.bool),
+    beforeChange: dart.fieldType(dart.nullable(dart.fnType(core.bool, [core.String, core.String]))),
+    afterChange: dart.fieldType(dart.nullable(dart.fnType(dart.void, [core.String, core.String]))),
+    cursorBehavior: dart.fieldType(masked_text_controller.CursorBehaviour),
+    [_lastUpdatedText]: dart.fieldType(core.String),
+    [_lastCursor]: dart.fieldType(core.int),
+    [_cursorUpdatePending]: dart.fieldType(core.bool),
+    [_cursorCalculatedPosition]: dart.fieldType(core.int),
+    [_previousMask]: dart.fieldType(dart.nullable(core.String)),
+    [_lockProcess]: dart.fieldType(core.bool)
+  }));
+  dart.trackLibraries("packages/extended_masked_text/src/masked_text_controller.dart", {
+    "package:extended_masked_text/src/masked_text_controller.dart": masked_text_controller
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["masked_text_controller.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../C:/packages/extended_masked_text/src/masked_text_controller.dart.lib.js"}');
+  // Exports:
+  return {
+    src__masked_text_controller: masked_text_controller
+  };
+}));
+
+//# sourceMappingURL=masked_text_controller.dart.lib.js.map
