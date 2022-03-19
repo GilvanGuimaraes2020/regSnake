@@ -25,7 +25,7 @@ class SerpenteController {
 
   SnakeServiceApiPost snakeServiceApiPost;
 
-  SerpenteController({this.snakeServiceApiPost});
+  SerpenteController({this.snakeServiceApiPost, this.txtDoadorCPF});
 
   saveSnake(BuildContext context) async {
     if (formKey.currentState.validate()) {

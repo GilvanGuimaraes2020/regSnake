@@ -1,14 +1,18 @@
 import 'dart:io';
+import 'package:extended_masked_text/extended_masked_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:projeto_reg_snake/control/serpente_controller.dart';
+import 'package:projeto_reg_snake/data/service/snake_service_api_get.dart';
 import 'package:projeto_reg_snake/data/service/snake_service_api_post.dart';
 import 'package:projeto_reg_snake/view/screens/widgets/w_botao.dart';
 import 'package:projeto_reg_snake/view/screens/widgets/w_campo_bcode.dart';
 import 'package:projeto_reg_snake/view/screens/widgets/w_campo_texto.dart';
+import 'package:projeto_reg_snake/view/widgets/shared/w_dialogs.dart';
+import 'package:projeto_reg_snake/view/widgets/shared/w_popup_doador.dart';
 
 class CadastroSerpente extends StatefulWidget {
   CadastroSerpente({Key key, this.title}) : super(key: key);
@@ -19,12 +23,17 @@ class CadastroSerpente extends StatefulWidget {
 }
 
 class _CadastroSerpente extends State<CadastroSerpente> {
+  SnakeServiceApiGet snakeServiceApiGet = new SnakeServiceApiGet();
+  
   SerpenteController serpenteController =
-  SerpenteController(snakeServiceApiPost: new SnakeServiceApiPost());
+  SerpenteController(snakeServiceApiPost: new SnakeServiceApiPost() ,
+txtDoadorCPF: MaskedTextController(mask: "000.000.000-00"));
   final picker = ImagePicker();
   Image image = null;
   String scanBarcode = "";
   String content = "";
+
+  String consultaCpf;
 
   Future getImage() async {
     serpenteController.pickedFile = await picker.getImage(source: ImageSource.camera);
@@ -42,6 +51,19 @@ class _CadastroSerpente extends State<CadastroSerpente> {
       }
     });
   }
+
+    dynamic retornaLista()async{
+       var listaCpf = await snakeServiceApiGet.listaCpf();
+       List<Map> dados = [];
+       for (var dado in listaCpf) {
+         dados.add(dado.data());
+         
+       }
+
+       print(dados);
+       
+      return dados;
+    }
 
   @override
   Widget build(BuildContext context) {
@@ -129,7 +151,7 @@ class _CadastroSerpente extends State<CadastroSerpente> {
                       Center(child: Text("Procedência")
                       ,),
                       Divider(thickness: 2,),
-                      WCampoTexto(
+                     /*  WCampoTexto(
                         validator: (value) {
                           if (value.length == 0) {
                             return 'Informe o nome da cidade';
@@ -161,18 +183,59 @@ class _CadastroSerpente extends State<CadastroSerpente> {
                           },
                           rotulo: 'Nome do doador',
                           variavel: serpenteController.txtDoadorNome,
-                          eSenha: false),
+                          eSenha: false), */
                       WCampoTexto(
                           validator: (value) {
                           if (value.length < 12) {
                             return 'Informe o CPF do doador';
-                            } else {
+                            } else {                              
                             return null;
                             }
                           },
                           rotulo: 'CPF do doador',
                           variavel: serpenteController.txtDoadorCPF,
-                          eSenha: false),
+                          eSenha: false,
+                          onchange: (value) async {
+                            if(value.length==14){
+                               consultaCpf = await snakeServiceApiGet.dadoRepetido(value);
+
+                              setState(() {
+                                // ignore: unnecessary_statements
+                                consultaCpf;
+                              });
+                              print(consultaCpf);
+                            }
+                          },
+                          icon: IconButton(
+                            onPressed: (){
+                             showDialog(
+                               context: context, 
+                               builder: (context){                               
+                                 return WpopupDoador();
+                               });
+                            }, 
+                            icon: Icon(Icons.search) ),),
+
+                        consultaCpf=="CPF Existente"?
+                        Container(
+                          width: MediaQuery.of(context).size.width - 40,
+                          padding: EdgeInsets.fromLTRB(0, 8, 0, 8),
+                          color: Colors.green[200],
+                          child: Icon(Icons.sentiment_satisfied,
+                          color: Colors.green,
+                          size: 40,
+                          ),
+                        ):
+                        Container(
+                          width: MediaQuery.of(context).size.width - 40,
+                          padding: EdgeInsets.fromLTRB(0, 8, 0, 8),
+                          color: Colors.red[200],
+                          child: Icon(Icons.sentiment_dissatisfied,
+                          color: Colors.red,
+                          size: 40,
+                          ),
+                        ),
+
                       GestureDetector(
                         onTap: () {
                           serpenteController.saveSnake(context);

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:projeto_reg_snake/data/models/m_menu.dart';
+import 'package:projeto_reg_snake/view/reports/relatorio_plantel.dart';
 import 'package:projeto_reg_snake/view/screens/acoes_administrador.dart';
 import 'package:projeto_reg_snake/view/screens/cadastra_especie.dart';
+import 'package:projeto_reg_snake/view/screens/cadastro_doador.dart';
 import '../alimenta_serpente.dart';
 import '../cadastro_serpente.dart';
 import '../cadastro_usuario.dart';
@@ -41,6 +43,12 @@ class WMenu extends StatelessWidget {
               transitionDuration: Duration(milliseconds: 100),
               pageBuilder: (_, __, ___) => CadastroUsuario(title: menu.name,)),
           );
+        }else if(menu.name == 'Cadastro de doador'){
+          Navigator.push(
+            context, PageRouteBuilder(
+              transitionDuration: Duration(milliseconds: 100),
+              pageBuilder: (_, __, ___) => CadastroDoador(title: menu.name,)),
+          );
         }else if(menu.name == 'Registro de serpente'){
           Navigator.push(
             context, PageRouteBuilder(
@@ -76,6 +84,13 @@ class WMenu extends StatelessWidget {
             context, PageRouteBuilder(
               transitionDuration: Duration(milliseconds: 100),
               pageBuilder: (_, __, ___) => CadastraEspecie()),
+          );
+        }
+        else if(menu.name == 'Relatorio'){
+          Navigator.push(
+            context, PageRouteBuilder(
+              transitionDuration: Duration(milliseconds: 100),
+              pageBuilder: (_, __, ___) => RelatorioPlantel()),
           );
         }
 

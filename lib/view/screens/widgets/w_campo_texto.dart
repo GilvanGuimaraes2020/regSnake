@@ -6,8 +6,9 @@ class WCampoTexto extends StatelessWidget {
   final bool eSenha;
   final IconButton icon;
   final FormFieldValidator<String> validator;
+  final ValueChanged<String> onchange;
 
-  WCampoTexto({this.variavel, this.rotulo, this.eSenha, this.icon, this.validator});
+  WCampoTexto({this.variavel, this.rotulo, this.eSenha, this.icon, this.validator, this.onchange});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +18,7 @@ class WCampoTexto extends StatelessWidget {
         controller: variavel,
         style: TextStyle(fontSize: 24),
         obscureText: eSenha,
+        onChanged:onchange,
 
         decoration: InputDecoration(
           labelText: rotulo,

@@ -24,8 +24,8 @@ class _MenuPageState extends State<MenuPage> {
 
     Menu menu1 = new Menu(name:'Sobre',icon:'imagens/information.svg');
     listMenu.add(menu1);
-    /*Menu menu2 = new Menu(name:'Cadastro de usuário',icon:'imagens/scared.svg');
-    listMenu.add(menu2);*/
+    Menu menu2 = new Menu(name:'Cadastro de doador',icon:'imagens/scared.svg');
+    listMenu.add(menu2);
     Menu menu3 = new Menu(name:'Registro de serpente',icon:'imagens/registration.svg');
     listMenu.add(menu3);
     Menu menu4 = new Menu(name:'Consulta',icon:'imagens/find.svg');
@@ -38,6 +38,8 @@ class _MenuPageState extends State<MenuPage> {
     listMenu.add(menu7);
     Menu menu8 = new Menu(name:'Especie',icon:'imagens/especie.svg');
     listMenu.add(menu8);
+     Menu menu9 = new Menu(name:'Relatorio',icon:'imagens/relatorio.svg');
+    listMenu.add(menu9);
 
   }
 

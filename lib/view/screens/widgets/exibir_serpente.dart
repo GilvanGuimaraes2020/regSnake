@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class ExibirSerpente extends StatelessWidget{
+class Serpente extends StatelessWidget{
   QueryDocumentSnapshot document;
 
-  ExibirSerpente({this.document});
+  Serpente({this.document});
+  
   @override
   Widget build(BuildContext context) {
 

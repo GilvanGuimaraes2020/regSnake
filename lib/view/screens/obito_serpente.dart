@@ -42,7 +42,8 @@ class _ObitoSerpente extends State<ObitoSerpente> {
           padding: EdgeInsets.all(40),
           child: Form(
             key: obitoController.formKey,
-            child: Column(children: [
+            child: Column(
+              children: [
               SvgPicture.asset('imagens/scared.svg', semanticsLabel: 'scared'),
               WCampoBCode(
                 rotulo: 'Número do Chip',
