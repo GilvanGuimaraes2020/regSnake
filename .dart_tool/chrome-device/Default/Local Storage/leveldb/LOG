@@ -1,6 +1,4 @@
-2022/03/18-16:06:02.332 11110 Reusing MANIFEST C:\Users\gilma\AppData\Local\Temp\flutter_tools.eaadaadc\flutter_tools_chrome_device.2730a965\Default\Local Storage\leveldb/MANIFEST-000001
-2022/03/18-16:06:02.334 11110 Recovering log #3
-2022/03/18-16:06:02.336 11110 Reusing old log C:\Users\gilma\AppData\Local\Temp\flutter_tools.eaadaadc\flutter_tools_chrome_device.2730a965\Default\Local Storage\leveldb/000003.log 
-2022/03/18-16:37:11.060 37b0 Level-0 table #5: started
-2022/03/18-16:37:11.066 37b0 Level-0 table #5: 13767 bytes OK
-2022/03/18-16:37:11.068 37b0 Delete type=0 #3
+2022/03/23-21:50:58.806 9694 Reusing MANIFEST C:\Users\gilma\AppData\Local\Temp\flutter_tools.eac46fe2\flutter_tools_chrome_device.41335b43\Default\Local Storage\leveldb/MANIFEST-000001
+2022/03/23-21:50:58.807 9694 Recovering log #4
+2022/03/23-21:50:58.808 9694 Reusing old log C:\Users\gilma\AppData\Local\Temp\flutter_tools.eac46fe2\flutter_tools_chrome_device.41335b43\Default\Local Storage\leveldb/000004.log 
+2022/03/23-21:50:58.809 9694 Delete type=0 #3

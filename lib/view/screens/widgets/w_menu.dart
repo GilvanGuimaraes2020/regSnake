@@ -112,20 +112,43 @@ class WMenu extends StatelessWidget {
               ),
             ],
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Stack(
+            //mainAxisAlignment: MainAxisAlignment.center,
+            alignment: Alignment.center,
             children:<Widget> [
+              menu.name == "Alimentação" ? Positioned(
+                right: 0,
+                top: 0,
+                child:  Container(
+                    width: 30,
+                    height: 30,
+                    child: Center(
+                      child: Text("1" , style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold
+                      ),),
+                    ),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.redAccent
+                        ),
+                  )):
+                  Positioned(child: Container(),),
 
               SvgPicture.asset(menu.icon,
                 semanticsLabel: menu.name,
                 color: Colors.blue,
                 height: 40,),
 
-              Container(
-                child: Text(menu.name, style: TextStyle(
-                    color: Colors.black,
-                    fontSize: MediaQuery.of(context).size.height/60
-                ))
+              Positioned(
+                bottom: 10,
+                child: Container(
+                  child: Text(menu.name, style: TextStyle(
+                      color: Colors.black,
+                      fontSize: MediaQuery.of(context).size.height/60
+                  ))
+                ),
               )
 
             ],

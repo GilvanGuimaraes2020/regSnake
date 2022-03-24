@@ -1,7 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_reg_snake/data/models/m_menu.dart';
 import 'package:projeto_reg_snake/view/screens/widgets/w_menu_list.dart';
+
 
 
 class MenuPage extends StatefulWidget {
@@ -9,6 +9,7 @@ class MenuPage extends StatefulWidget {
 
   final String login;
   final String title;
+  
 
   @override
   _MenuPageState createState() => _MenuPageState();
@@ -16,7 +17,8 @@ class MenuPage extends StatefulWidget {
 
 class _MenuPageState extends State<MenuPage> {
   List<Menu> listMenu = [];
-  Stream<QuerySnapshot> usersStream;
+  bool checaAlerta = false;
+
 
   @override
   void initState() {
@@ -41,8 +43,11 @@ class _MenuPageState extends State<MenuPage> {
      Menu menu9 = new Menu(name:'Relatorio',icon:'imagens/relatorio.svg');
     listMenu.add(menu9);
 
+    
+    
   }
 
+  
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +55,9 @@ class _MenuPageState extends State<MenuPage> {
       listMenu[0] = new Menu(name:"Administrador" , icon: 'imagens/information.svg');
 
     }
+
+    
+   
     print(listMenu[0].name);
     return Scaffold(
         appBar: AppBar(
@@ -64,9 +72,8 @@ class _MenuPageState extends State<MenuPage> {
             children: <Widget>[
               WMenuList(menuList: listMenu,)
             ]),
-
-
         ),
+
 
     );
   }

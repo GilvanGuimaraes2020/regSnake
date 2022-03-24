@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Navigator.push(
           context, PageRouteBuilder(
             transitionDuration: Duration(milliseconds: 100),
-            pageBuilder: (_, __, ___) => MenuPage(login: txtLogin.text,)),
+            pageBuilder: (_, __, ___) => MenuPage(login: txtLogin.text )),
         );
       }else{
         Toast.show(result, context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
